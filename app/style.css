@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #0F0D13;
+}
+
+#app {
+    display: grid;
+    grid-template-areas: 
+    'A B'
+    'A C';
+    gap: 32px;
+    grid-template-columns: max-content;
+    place-content: center;
+    height: 100vh;
+}
+
+#player1 {
+    grid-area: A;
+    padding: 50px 38px;
+}
+
+#player1 .wrapper {
+    width: 190px;
+}
+
+#player1 img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+#player1 .info {
+    margin-top: 28px;
+}
+
+
+/*################ Player 2 #############*/
+#player2 {
+    grid-area: B;
+    height: fit-content;
+}
+
+#player2 img {
+    width: 84px;
+}
+
+#player3 {
+    grid-area: C;
+}
+
+.player {
+    background-color: #2A2141;
+    padding: 28px;
+    border-radius: 10px;
+}
+
+.player img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.info {
+    color: #E1E1E6;
+}
+
+.info h1 {
+    font-size: 24px;
+}
+
+.info p {
+    margin-top: 9.6px;
+    opacity: .67;
+    font-size: 19px;
+}
+
+.container {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.horizontal .controls{
+    padding: 0 51px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.track {
+    margin-top: 28px;
+    position: relative;
+}
+
+.track::before {
+    content: '';
+    height: 6px;
+    width: 100%;
+    display: block;
+    background-color: #d9d9d9;
+    opacity: .3;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.track::after {
+    content: '';
+    height: 6px;
+    width: 80%;
+    display: block;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}
+
+.time {
+    color: #c4c4cc;
+    font-size: 14px;
+    opacity: .6;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9.6px;
+}
+
+@media(max-width: 680px){
+    #app {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 300px;
+        height: auto;
+        padding-block: 60px;
+    }
+    #player1 .wrapper {
+        margin: 0 auto;
+    }
+
+    .horizontal .controls {
+        padding-inline: 30px;
+    }
+}
